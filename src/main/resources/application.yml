@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: currency-conversion
+
+  devtools:
+    livereload:
+      port: 36611
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  port: 8100
+
+---
+spring:
+  config:
+    activate:
+      on-profile: port8101
+
+  devtools:
+    livereload:
+      port: 36612
+
+server:
+  port: 8101
+
+---
+spring:
+  config:
+    activate:
+      on-profile: port8102
+
+  devtools:
+    livereload:
+      port: 36613
+
+server:
+  port: 8102

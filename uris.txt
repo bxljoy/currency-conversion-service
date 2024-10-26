@@ -1,0 +1,22 @@
+currency-conversion URL
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+
+Response Structure
+{
+  "id": 10001,
+  "from": "USD",
+  "to": "INR",
+  "conversionMultiple": 65.00,
+  "quantity": 10,
+  "totalCalculatedAmount": 650.00,
+  "environment": "8000 instance-id"
+}
+
+mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8101 --spring.devtools.livereload.port=36612"
+
+mvn spring-boot:run -Dspring-boot.run.arguments="--server.port=8102 --spring.devtools.livereload.port=36613"
+
+
+mvn spring-boot:run -Dspring-boot.run.profiles=port8101
+
+mvn spring-boot:run -Dspring-boot.run.profiles=port8102
