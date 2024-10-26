@@ -1,7 +1,6 @@
 package com.alex.microservices.currency_conversion_service.domain;
 
 import java.math.BigDecimal;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
