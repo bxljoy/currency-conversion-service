@@ -20,6 +20,14 @@ eureka:
     leaseRenewalIntervalInSeconds: 30 # Heartbeat interval
     leaseExpirationDurationInSeconds: 90 # Timeout before marking the instance as down
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
 ---
 spring:
   config:
