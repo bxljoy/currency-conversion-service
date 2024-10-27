@@ -16,6 +16,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 30 # Heartbeat interval
+    leaseExpirationDurationInSeconds: 90 # Timeout before marking the instance as down
 
 ---
 spring:
